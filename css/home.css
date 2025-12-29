@@ -1,0 +1,637 @@
+/* Home Page Premium Styles */
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    min-height: 600px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-white);
+    margin-top: 0;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: brightness(0.5);
+    transform: scale(1.05);
+    transition: transform 10s ease;
+}
+
+.hero:hover .hero-bg {
+    transform: scale(1.1);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(15, 61, 50, 0.7) 0%, rgba(5, 27, 22, 0.8) 100%);
+    z-index: -1;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 10;
+    max-width: 900px;
+    padding: 3rem 2rem;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 800;
+    color: white;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    letter-spacing: -2px;
+    line-height: 1.2;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-content p {
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    line-height: 1.6;
+    animation: fadeInUp 1.2s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Quick Stats - Floating 3D Cards */
+.quick-stats {
+    margin-top: -80px;
+    position: relative;
+    z-index: 20;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.stat-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: var(--shadow-3d);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: var(--transition);
+}
+
+.stat-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.25);
+    border-color: var(--accent-color);
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--dark-green);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Alumni Relations Section */
+.alumni-relations-section {
+    background: var(--bg-light);
+}
+
+.alumni-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.alumni-image-wrapper {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.alumni-img-main {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.alumni-image-wrapper:hover .alumni-img-main {
+    transform: scale(1.05);
+}
+
+.alumni-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--dark-green);
+}
+
+.alumni-content p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.feature-list {
+    margin: 2rem 0;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.feature-item:hover {
+    background: var(--bg-cream);
+    transform: translateX(5px);
+}
+
+.feature-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--secondary-gradient);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+/* Alumni Carousel */
+.alumni-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 4px solid transparent;
+}
+
+.alumni-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-3d);
+    border-bottom-color: var(--accent-color);
+}
+
+.alumni-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--primary-gradient);
+}
+
+.alumni-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1.5rem;
+    border: 4px solid white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+.alumni-card h4 {
+    margin-bottom: 0.5rem;
+    color: var(--dark-green);
+}
+
+/* Alumni Wall */
+.alumni-wall {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.wall-tile {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 1;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.wall-tile:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: var(--shadow-lg);
+}
+
+.wall-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.wall-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 1rem;
+    color: white;
+    transform: translateY(100%);
+    transition: var(--transition);
+}
+
+.wall-tile:hover .wall-overlay {
+    transform: translateY(0);
+}
+
+.wall-overlay h4 {
+    color: white;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Events Cards - Glass Float */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.event-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+.event-img {
+    height: 220px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.event-card:hover .event-img {
+    transform: scale(1.1);
+}
+
+.event-body {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-date {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 700;
+    color: var(--dark-green);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.event-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--dark-green);
+}
+
+.event-body p {
+    flex: 1;
+    margin-bottom: 1rem;
+}
+
+.event-body a {
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+/* CTA Section */
+.cta-section {
+    position: relative;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-green) 100%);
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    margin: 4rem 0;
+    border-radius: 20px;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.cta-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.cta-section h2 {
+    color: white;
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1.5rem;
+}
+
+.cta-section p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+/* Hero Buttons */
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 1.4s ease;
+}
+
+/* Distinguished Alumni Section */
+.distinguished-alumni {
+    background: var(--bg-cream);
+}
+
+.alumni-carousel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding-bottom: 20px;
+}
+
+.alumni-class {
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+.alumni-role {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+}
+
+/* Mentorship Section */
+.mentorship-section {
+    background: white;
+}
+
+.mentorship-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.mentorship-image {
+    order: 2;
+}
+
+.mentorship-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.5s ease;
+}
+
+.mentorship-image:hover img {
+    transform: scale(1.02);
+}
+
+.mentorship-content {
+    order: 1;
+}
+
+.mentorship-content p {
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+.mentorship-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Engagements Section */
+.engagements-section {
+    background: var(--bg-cream);
+}
+
+.engagements-list {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.engagement-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #eee;
+    transition: var(--transition);
+}
+
+.engagement-item:last-child {
+    border-bottom: none;
+}
+
+.engagement-item:hover {
+    padding-left: 10px;
+}
+
+.engagement-date {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    width: 80px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.engagement-date span {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 0.2rem;
+}
+
+.engagement-info {
+    flex: 1;
+}
+
+.engagement-info h4 {
+    margin-bottom: 0.2rem;
+    color: var(--dark-green);
+    font-size: 1.2rem;
+}
+
+.engagement-info p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin: 0;
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    .hero {
+        height: 80vh;
+        min-height: 500px;
+    }
+    
+    .quick-stats {
+        margin-top: -40px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .stat-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .alumni-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .alumni-carousel {
+        grid-template-columns: 1fr;
+    }
+    
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .alumni-wall {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .cta-section {
+        margin: 2rem 0;
+        border-radius: 0;
+    }
+    
+    .mentorship-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .mentorship-image {
+        order: 1;
+    }
+    
+    .mentorship-content {
+        order: 2;
+    }
+    
+    .engagement-item {
+        flex-wrap: wrap;
+    }
+    
+    .engagement-date {
+        width: 100%;
+        text-align: left;
+    }
+}
